@@ -1,6 +1,6 @@
 import React from 'react';
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
-import Questions from '../../components/questions/easyQuestions';
+import Questions from '../questions/questions';
 
 
 
@@ -9,25 +9,28 @@ class TriviaBoard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            question: "",
-            userAnswer: null,
-            realAnswer: null,
-            currentIndex: 0,
-            option1: "",
-            option2: "",
-            option3: "",
-            option4: "",
-            triviaEnd: false,
+            question: Questions[0].question,
+            option1: Questions[0].option1,
+            option2: Questions[0].option2,
+            option3: Questions[0].option3,
+            option4: Questions[0].option4,
+            realAnswer: Questions[0].answer,
+
             score: 0,
-            disabled: true
+            userAnswer: null,
+
+            triviaEnd: false,
+            disabled: true,
+
+            currentIndex: 0,
         };
     }
-    // nextQuestion = () => {
-
-    // }
+    nextQuestion = () => {
+        
+    }
 
     checkAnswer = (importedPropsFromButton) => {
-        console.log(importedPropsFromButton.choice1);
+        console.log(Questions[0].question);
         // const { currentIndex } = this.state;
         // this.setState({
 
@@ -42,7 +45,7 @@ class TriviaBoard extends React.Component {
                 <container className="d-flex justify-content-center">
                     <row>
                         <col-12>
-                            <h1> {this.state.questions} </h1>
+                            <h1> {this.state.question} </h1>
                         </col-12>
                     </row>
                 </container>

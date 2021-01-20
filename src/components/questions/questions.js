@@ -27,47 +27,69 @@ const Questions = [
         answer: "fruit",
     },
     {
+        id: 3,
+        question: "",
+        option1: "",
+        option2: "",
+        option3: "",
+        option4:"",
+        answer: "",
+    },
+    {
         id: 4,
         question: "",
-        options: ["1", "2","3", "4"],
-        answer: ""
+        option1: "",
+        option2: "",
+        option3: "",
+        option4:"",
+        answer: "",
     },
     {
         id: 5,
         question: "",
-        options: ["1", "2","3", "4"],
-        answer: ""
+        option1: "",
+        option2: "",
+        option3: "",
+        option4:"",
+        answer: "",
     },
     {
         id: 6,
         question: "",
-        options: ["1", "2","3", "4"],
-        answer: ""
+        option1: "",
+        option2: "",
+        option3: "",
+        option4:"",
+        answer: "",
     },
     {
         id: 7,
         question: "",
-        options: ["1", "2","3", "4"],
-        answer: ""
+        option1: "",
+        option2: "",
+        option3: "",
+        option4:"",
+        answer: "",
     },
     {
         id: 8,
         question: "",
-        options: ["1", "2","3", "4"],
-        answer: ""
+        option1: "",
+        option2: "",
+        option3: "",
+        option4:"",
+        answer: "",
     },
     {
         id: 9,
         question: "",
-        options: ["1", "2","3", "4"],
-        answer: ""
+        option1: "",
+        option2: "",
+        option3: "",
+        option4:"",
+        answer: "",
     },
-    {
-        id: 10,
-        question: "",
-        options: ["1", "2","3", "4"],
-        answer: ""
-    },
+    
 ]
 
 export default Questions;
