@@ -1,9 +1,9 @@
 import React from 'react';
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
-import Questions from '../questions/questions';
+import {Questions} from '../questions/questions';
 import {Container, Row} from 'react-bootstrap'
 
-
+// Current index is the position in the array of Questions (Question Number)
 let currentIndex = 0;
 
 class TriviaBoard extends React.Component {
@@ -17,7 +17,6 @@ class TriviaBoard extends React.Component {
             option4: Questions[currentIndex].option4,
             realAnswer: Questions[currentIndex].answer,
             score: 0,
-            questionNum: 0,
 
             userChoice: null,
             showAnswer: false,
@@ -26,7 +25,7 @@ class TriviaBoard extends React.Component {
         };
     }
     nextQuestion = () => {
-        // Current index is the position in the array of Questions (Question Number)
+        // Move to the next question
         currentIndex++;
         this.setState ({
             question: Questions[currentIndex].question,
@@ -59,14 +58,18 @@ class TriviaBoard extends React.Component {
             <div>
                 <Container>
                     <Row className="d-flex justify-content-between">
-                        <col-4>
+                        <col-6>
                             <h1>Question {currentIndex+1} / 20</h1>
-                        </col-4>
-                        <col-4>
-                            Timer here
-                        </col-4>
-                        <col-4>
+                        </col-6>
+                        <col-6>
                             <h1>Score: {this.state.score}</h1>
+                        </col-6>
+                    </Row>
+                </Container>
+                <Container>
+                    <Row className="d-flex justify-content-center">
+                        <col-4>
+                            <p>Timer here</p>
                         </col-4>
                     </Row>
                 </Container>
