@@ -1,68 +1,78 @@
 import React from 'react';
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
 import Questions from '../questions/questions';
+import {Container, Row} from 'react-bootstrap'
 
 
-
+let currentIndex = 0;
 
 class TriviaBoard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            question: Questions[0].question,
-            option1: Questions[0].option1,
-            option2: Questions[0].option2,
-            option3: Questions[0].option3,
-            option4: Questions[0].option4,
-            realAnswer: Questions[0].answer,
+            // currentIndex: 0,
+            question: Questions[currentIndex].question,
+            option1: Questions[currentIndex].option1,
+            option2: Questions[currentIndex].option2,
+            option3: Questions[currentIndex].option3,
+            option4: Questions[currentIndex].option4,
+            realAnswer: Questions[currentIndex].answer,
 
             score: 0,
-            userAnswer: null,
+            userChoice: null,
+            showAnswer: false,
 
             triviaEnd: false,
-            disabled: true,
-
-            currentIndex: 0,
         };
     }
     nextQuestion = () => {
+        currentIndex++;
+        this.setState ({
+            question: Questions[currentIndex].question,
+            option1: Questions[currentIndex].option1,
+            option2: Questions[currentIndex].option2,
+            option3: Questions[currentIndex].option3,
+            option4: Questions[currentIndex].option4,
+            realAnswer: Questions[currentIndex].answer,
+        })
+ 
+    }
+
+    checkAnswer = (userSelected) => {
+        console.log(userSelected)
+        // this.setState({
+        //     userChoice:  
+        // })
         
     }
 
-    checkAnswer = (importedPropsFromButton) => {
-        console.log(Questions[0].question);
-        // const { currentIndex } = this.state;
-        // this.setState({
-
-        // })
-    }
-    
     // on button click increment through questions  array, updating the states that we used before
 
     render() {
         return (
             <div>
-                <container className="d-flex justify-content-center">
-                    <row>
+                <Container className="d-flex justify-content-center">
+                    <Row>
                         <col-12>
                             <h1> {this.state.question} </h1>
                         </col-12>
-                    </row>
-                </container>
-                <container className="d-flex justify-content-center">
-                    <row>
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice1={this.state.option1}> </ImportedButton>
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice2={this.state.option2}> </ImportedButton>
-                    </row>
-                </container>
-                <container className="d-flex justify-content-center">
-                    <row>
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice3={this.state.option3}> </ImportedButton>
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice4={this.state.option4}> </ImportedButton>
-                    </row>
-                </container>
+                    </Row>
+                </Container>
+                <Container className="d-flex justify-content-center">
+                    <Row>
+                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.state.option1}> </ImportedButton>
+                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.state.option2}> </ImportedButton>
+                    </Row>
+                </Container>
+                <Container className="d-flex justify-content-center">
+                    <Row>
+                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.state.option3}> </ImportedButton>
+                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.state.option4}> </ImportedButton>
+                    </Row>
+                </Container>
             </div>
         )
     }
 }
+
 export default TriviaBoard;

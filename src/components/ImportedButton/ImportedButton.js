@@ -10,10 +10,10 @@ const ImportedButton = (importProps) => {
         fontWeight: "Bold",
         fontSize: "20px"
     }
-    const handleClick = () => importProps.onClick(importProps)
+    const handleClick = () => {importProps.onClick(importProps.choice)}
     return (
         <>
-            <Button style={buttonDrip} onClick={handleClick}> {importProps.choice1} {importProps.choice2} {importProps.choice3} {importProps.choice4} </Button>
+            <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button>
         </>
         
     )
