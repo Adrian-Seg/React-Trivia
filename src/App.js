@@ -9,8 +9,9 @@ import MainMenu from './components/MainMenu/MainMenu'
 
 function App() {
   return (
-    <TriviaBoard />
-    // <MainMenu />
+
+    <MainMenu />
+    
   );
 }
 

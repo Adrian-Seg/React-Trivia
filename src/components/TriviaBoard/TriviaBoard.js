@@ -2,6 +2,7 @@ import React from 'react';
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
 import {Questions} from '../questions/questions';
 import {Container, Row} from 'react-bootstrap'
+import TestMenu from '../TestMenu/TestMenu'
 
 // Current index is the position in the array of Questions (Question Number)
 let currentIndex = 0;
@@ -19,7 +20,6 @@ class TriviaBoard extends React.Component {
             score: 0,
 
             showAnswer: false,
-
             triviaEnd: false,
         };
     }
@@ -27,7 +27,7 @@ class TriviaBoard extends React.Component {
         // Move to the next question
         currentIndex++;
         // Checking if the questions get to 20, to end game
-        if(currentIndex == 20){
+        if(currentIndex === 20){
             alert("End game")
         }
         

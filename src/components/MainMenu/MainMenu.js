@@ -1,66 +1,51 @@
 import React from 'react';
-import { Container, Row, Button } from 'react-bootstrap'
-import { Questions } from '../questions/questions'
+import { Container, Row } from 'react-bootstrap'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
+import TriviaBoard from '../TriviaBoard/TriviaBoard';
 
 
-const MainMenu = () => {
-    const optionsDrip = {
-        width: "240px",
-        height: "120px",
-        backgroundColor: "Maroon",
-        padding: "10px",
-        borderColor: "Black",
-        fontWeight: "Bold",
-        fontSize: "20px"
-    }
-    const buttonDrip = {
-        width: "360px",
-        height: "240px",
-        backgroundColor: "Maroon",
-        padding: "10px",
-        borderColor: "Black",
-        fontWeight: "Bold",
-        fontSize: "20px"
-    }
-    const EasyMode = () => {
-        let randomQuestions = Questions.sort(() => Math.random() - 0.5)
-        let easyQuestions = randomQuestions.splice(0,20);
-        
-        console.log(easyQuestions)
-    }
-    const MediumMode = () => {
-        // let randomQuestions = MediumQuestions.sort(() => Math.random() - 0.5)
-        // let lvl2Questions = randomQuestions.splice(0,20);
-        
-        // console.log(lvl2Questions)
-    }
-    const HardMode = () => {
-        // let randomQuestions = HardQuestions.sort(() => Math.random() - 0.5)
-        // let lvl3Questions = randomQuestions.splice(0,20);
-        
-        // console.log(lvl3Questions)
-    }
-    const LoadOptions = () => {
-
-    }
-    return(
-        <Container>
+function MainMenu() {
+    
+    return (
+        <Router>
             <Container>
                 <Row>
-                    <Button style={optionsDrip} onClick={LoadOptions}>Options</Button>  
+                    <MainMenuBtn as={Link} to='/Options' choice={"Options"}> </MainMenuBtn>
                 </Row>
             </Container>
             <Container>
                 <Row>
-                    <Button style={buttonDrip} onClick={EasyMode}>Easy</Button>
-                    <Button style={buttonDrip} onClick={MediumMode}>Medium</Button>
-                    <Button style={buttonDrip} onClick={HardMode}>Hard</Button>
+                    <Link as={Link} to='/TriviaBoard'>
+                        <MainMenuBtn choice={"Easy"}> </MainMenuBtn>
+                        <MainMenuBtn choice={"Medium"}> </MainMenuBtn>
+                        <MainMenuBtn choice={"Hard"}> </MainMenuBtn>
+                    </Link>
                 </Row>
             </Container>
-        </Container>
+            <hr />
+
+            <Switch>
+                {/* <Route path="/Options">
+                    <Options />
+                </Route> */}
+                <Route path="/TriviaBoard">
+                    <TriviaBoard />
+                </Route>
+                <Route path="/TriviaBoard">
+                    <TriviaBoard />
+                </Route>
+                <Route path="/TriviaBoard">
+                    <TriviaBoard />
+                </Route>
+            </Switch>
+        </Router>
     )
 }
-
-
 
 export default MainMenu;
