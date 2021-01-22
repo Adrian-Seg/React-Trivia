@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 function Player() {
+    console.log("test")
     const [songs,setSongs = useState([
         {
             title: "La Hague",
