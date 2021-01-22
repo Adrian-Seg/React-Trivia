@@ -26,6 +26,11 @@ class TriviaBoard extends React.Component {
     nextQuestion = () => {
         // Move to the next question
         currentIndex++;
+        // Checking if the questions get to 20, to end game
+        if(currentIndex == 20){
+            alert("End game")
+        }
+        
         this.setState ({
             question: Questions[currentIndex].question,
             option1: Questions[currentIndex].option1,
@@ -37,7 +42,6 @@ class TriviaBoard extends React.Component {
         })
  
     }
-
     checkAnswer = (userSelected) => {
         console.log("You chose: " + userSelected)
         console.log("Answer: " + this.state.realAnswer)
@@ -59,7 +63,7 @@ class TriviaBoard extends React.Component {
                     <Row className="d-flex justify-content-between">
                         <col-6>
 
-                            <h1>Question {currentIndex+1} / {Questions.length}</h1>
+                            <h1>Question {currentIndex+1} / 20</h1>
                         </col-6>
                         <col-6>
                             <h1>Score: {this.state.score}</h1>
