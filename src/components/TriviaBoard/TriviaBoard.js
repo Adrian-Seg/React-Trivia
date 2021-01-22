@@ -18,7 +18,6 @@ class TriviaBoard extends React.Component {
             realAnswer: Questions[currentIndex].answer,
             score: 0,
 
-            userChoice: null,
             showAnswer: false,
 
             triviaEnd: false,
@@ -40,14 +39,14 @@ class TriviaBoard extends React.Component {
     }
 
     checkAnswer = (userSelected) => {
-        console.log(userSelected)
-        console.log(this.state.realAnswer)
+        console.log("You chose: " + userSelected)
+        console.log("Answer: " + this.state.realAnswer)
         if (userSelected === this.state.realAnswer) {
             this.setState({
                 score: this.state.score++,
             })
         }
-        console.log(this.state.score)
+        console.log("Score: " + this.state.score)
         this.nextQuestion();
     }
 
@@ -59,7 +58,8 @@ class TriviaBoard extends React.Component {
                 <Container>
                     <Row className="d-flex justify-content-between">
                         <col-6>
-                            <h1>Question {currentIndex+1} / 20</h1>
+
+                            <h1>Question {currentIndex+1} / {Questions.length}</h1>
                         </col-6>
                         <col-6>
                             <h1>Score: {this.state.score}</h1>
