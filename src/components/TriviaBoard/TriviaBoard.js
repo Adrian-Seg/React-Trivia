@@ -45,12 +45,14 @@ class TriviaBoard extends React.Component {
     checkAnswer = (userSelected) => {
         console.log("You chose: " + userSelected)
         console.log("Answer: " + this.state.realAnswer)
+        // Conditional to check if the users choice is the real answer, to add a point
         if (userSelected === this.state.realAnswer) {
             this.setState({
                 score: this.state.score++,
             })
         }
         console.log("Score: " + this.state.score)
+        // Calling next question function
         this.nextQuestion();
     }
 
@@ -62,7 +64,7 @@ class TriviaBoard extends React.Component {
                 <Container>
                     <Row className="d-flex justify-content-between">
                         <col-6>
-
+                        {/* Adding + 1 because the array starts at 0 */}
                             <h1>Question {currentIndex+1} / 20</h1>
                         </col-6>
                         <col-6>
