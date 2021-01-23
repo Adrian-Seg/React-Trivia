@@ -11,8 +11,8 @@ import TriviaBoard from '../TriviaBoard/TriviaBoard';
 
 
 // function MainMenu() {
-class MainMenu extends React.Component{
-    constructor(props){
+class MainMenu extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             difficulty: "",
@@ -25,38 +25,38 @@ class MainMenu extends React.Component{
             gameArray: arr
         })
     }
-    render(){
+    render() {
         return (
             <Router>
                 <Container>
                     <Row>
-                        <MainMenuBtn as={Link} to='/Options' choice={"Options"} />
+                        <MainMenuBtn as={Link} to='/Options' choice={"Options"} />;
                     </Row>
                 </Container>
                 <Container>
                     <Row>
                         <Link as={Link} to='/TriviaBoard'>
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />;
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />;
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />;
                         </Link>
                     </Row>
                 </Container>
                 <hr />
-    
+
                 <Switch>
                     {/* <Route path="/Options">
                         <Options />
                     </Route> */}
                     <Route path="/TriviaBoard">
-                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray}/>
+                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
                     </Route>
                 </Switch>
             </Router>
         )
 
     }
-    
+
 }
 
 export default MainMenu;

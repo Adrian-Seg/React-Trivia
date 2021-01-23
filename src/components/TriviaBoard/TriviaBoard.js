@@ -17,17 +17,21 @@ class TriviaBoard extends React.Component {
             option4: "",
             realAnswer: "",
             score: 0,
+            timer: 3,
 
             showAnswer: false,
             triviaEnd: false,
         };
+    }
+    endGame() {
+        alert("End Game")
     }
     nextQuestion = () => {
         // Move to the next question
         currentIndex++;
         // Checking if the questions get to 20, to end game
         if(currentIndex === 20){
-            alert("End game")
+            this.endGame();
         }
         
         this.setState ({
@@ -55,6 +59,7 @@ class TriviaBoard extends React.Component {
     // on button click increment through questions  array, updating the states that we used before
 
     render() {
+        const {timer} = this.state;
         return (
             <div>
                 <Container>
@@ -71,7 +76,7 @@ class TriviaBoard extends React.Component {
                 <Container>
                     <Row className="d-flex justify-content-center">
                         <col-4>
-                            <p>Timer here</p>
+                            <h1>Time Left: {timer}</h1>
                         </col-4>
                     </Row>
                 </Container>
@@ -94,9 +99,15 @@ class TriviaBoard extends React.Component {
                         <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.props.triviaArray[currentIndex].option4} />
                     </Row>
                 </Container>
-                
             </div>
         )
+    }
+    componentDidMount () {
+        this.myInterval = setInterval(() => {
+            this.setState(prevState => ({
+                timer: prevState.timer - 1
+            }))
+        }, 1000)
     }
 }
 
