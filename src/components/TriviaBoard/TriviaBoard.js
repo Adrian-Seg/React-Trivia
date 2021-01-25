@@ -41,7 +41,8 @@ class TriviaBoard extends React.Component {
             option3: Questions[currentIndex].option3,
             option4: Questions[currentIndex].option4,
             realAnswer: Questions[currentIndex].answer,
-            score: this.state.score
+            score: this.state.score,
+            timer: 3,
         })
  
     }
@@ -107,6 +108,9 @@ class TriviaBoard extends React.Component {
             this.setState(prevState => ({
                 timer: prevState.timer - 1
             }))
+            if (this.state.timer == 0){
+                this.nextQuestion();
+            }
         }, 1000)
     }
 }
