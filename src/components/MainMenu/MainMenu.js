@@ -35,15 +35,12 @@ class MainMenu extends React.Component {
                         <Link as={Link} to='/Options'>
                             <OptionsBtn choice={"Options"} />
                         </Link>
-                    </Row>
-                </Container>
-
-                <Container>
-                    <Switch>
-                    <Route path="/Options">
+                        <Switch>
+                            <Route path="/Options">
                         <Options />
                     </Route>
                     </Switch>
+                    </Row>
                 </Container>
 
                 <Container>
