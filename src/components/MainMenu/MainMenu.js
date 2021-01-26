@@ -37,6 +37,15 @@ class MainMenu extends React.Component {
                         </Link>
                     </Row>
                 </Container>
+
+                <Container>
+                    <Switch>
+                    <Route path="/Options">
+                        <Options />
+                    </Route>
+                    </Switch>
+                </Container>
+
                 <Container>
                     <Row>
                         <Link as={Link} to='/TriviaBoard'>
@@ -49,9 +58,6 @@ class MainMenu extends React.Component {
                 <hr />
 
                 <Switch>
-                    <Route path="/Options">
-                        <Options />
-                    </Route>
                     <Route path="/TriviaBoard">
                         <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
                     </Route>
