@@ -7,7 +7,9 @@ import {
     Link
 } from "react-router-dom";
 import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
+import OptionsBtn from '../OptionsBtn/OptionsBtn'
 import TriviaBoard from '../TriviaBoard/TriviaBoard';
+import Options from '../Options/Options'
 
 
 // function MainMenu() {
@@ -30,24 +32,26 @@ class MainMenu extends React.Component {
             <Router>
                 <Container>
                     <Row>
-                        <MainMenuBtn as={Link} to='/Options' choice={"Options"} />;
+                        <Link as={Link} to='/Options'>
+                            <OptionsBtn choice={"Options"} />
+                        </Link>
                     </Row>
                 </Container>
                 <Container>
                     <Row>
                         <Link as={Link} to='/TriviaBoard'>
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />;
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />;
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />;
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
                         </Link>
                     </Row>
                 </Container>
                 <hr />
 
                 <Switch>
-                    {/* <Route path="/Options">
+                    <Route path="/Options">
                         <Options />
-                    </Route> */}
+                    </Route>
                     <Route path="/TriviaBoard">
                         <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
                     </Route>
