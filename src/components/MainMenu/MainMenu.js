@@ -37,6 +37,7 @@ class MainMenu extends React.Component {
                         </Link>
                         <Switch>
                             <Route path="/Options">
+                                <Options />
                             </Route>
                         </Switch>
                     </Row>

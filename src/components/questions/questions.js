@@ -491,7 +491,7 @@ const MediumQuestions = [
     },
     {
         id: 4,
-        question: "What sport is being played in the Anime Eyeshield 21?",
+        question: "What sport is being played in the anime Eyeshield 21?",
         option1: "American Football",
         option2: "Soccer",
         option3: "Baseball",
@@ -520,7 +520,7 @@ const MediumQuestions = [
         id: 7,
         question: "In Dragon Ball Z, who was the first character to go Super Saiyan 2?",
         option1: "Krillin",
-        option2: "vegeta",
+        option2: "Vegeta",
         option3: "Goku",
         option4:"Gohan",
         answer: "Gohan",
