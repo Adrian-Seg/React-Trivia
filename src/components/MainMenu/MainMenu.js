@@ -1,66 +1,69 @@
 import React from 'react';
-import { Container, Row, Button } from 'react-bootstrap'
-import { Questions } from '../questions/questions'
+import { Container, Row } from 'react-bootstrap'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
+import OptionsBtn from '../OptionsBtn/OptionsBtn'
+import TriviaBoard from '../TriviaBoard/TriviaBoard';
+import Options from '../Options/Options'
 
 
-const MainMenu = () => {
-    const optionsDrip = {
-        width: "240px",
-        height: "120px",
-        backgroundColor: "Maroon",
-        padding: "10px",
-        borderColor: "Black",
-        fontWeight: "Bold",
-        fontSize: "20px"
+// function MainMenu() {
+class MainMenu extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            difficulty: "",
+            gameArray: []
+        }
     }
-    const buttonDrip = {
-        width: "360px",
-        height: "240px",
-        backgroundColor: "Maroon",
-        padding: "10px",
-        borderColor: "Black",
-        fontWeight: "Bold",
-        fontSize: "20px"
+    setDifficulty = (diff, arr) => {
+        this.setState({
+            difficulty: diff,
+            gameArray: arr
+        })
     }
-    const EasyMode = () => {
-        let randomQuestions = Questions.sort(() => Math.random() - 0.5)
-        let easyQuestions = randomQuestions.splice(0,20);
-        
-        console.log(easyQuestions)
-    }
-    const MediumMode = () => {
-        // let randomQuestions = MediumQuestions.sort(() => Math.random() - 0.5)
-        // let lvl2Questions = randomQuestions.splice(0,20);
-        
-        // console.log(lvl2Questions)
-    }
-    const HardMode = () => {
-        // let randomQuestions = HardQuestions.sort(() => Math.random() - 0.5)
-        // let lvl3Questions = randomQuestions.splice(0,20);
-        
-        // console.log(lvl3Questions)
-    }
-    const LoadOptions = () => {
+    render() {
+        return (
+            <Router>
+                <Container>
+                    <Row>
+                        <Link as={Link} to='/Options'>
+                            <OptionsBtn choice={"Options"} />
+                        </Link>
+                        <Switch>
+                            <Route path="/Options">
+                                <Options />
+                            </Route>
+                        </Switch>
+                    </Row>
+                </Container>
+
+                <Container>
+                    <Row>
+                        <Link as={Link} to='/TriviaBoard'>
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
+                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
+                        </Link>
+                    </Row>
+                </Container>
+                <hr />
+
+                <Switch>
+                    <Route path="/TriviaBoard">
+                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
+                    </Route>
+                </Switch>
+            </Router>
+        )
 
     }
-    return(
-        <Container>
-            <Container>
-                <Row>
-                    <Button style={optionsDrip} onClick={LoadOptions}>Options</Button>  
-                </Row>
-            </Container>
-            <Container>
-                <Row>
-                    <Button style={buttonDrip} onClick={EasyMode}>Easy</Button>
-                    <Button style={buttonDrip} onClick={MediumMode}>Medium</Button>
-                    <Button style={buttonDrip} onClick={HardMode}>Hard</Button>
-                </Row>
-            </Container>
-        </Container>
-    )
+
 }
-
-
 
 export default MainMenu;

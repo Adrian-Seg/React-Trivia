@@ -1,16 +1,17 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TriviaBoard from './components/TriviaBoard/TriviaBoard'
 import MainMenu from './components/MainMenu/MainMenu'
+import Options from './components/Options/Options'
 
 
 
 
 function App() {
   return (
-    <TriviaBoard />
-    // <MainMenu />
+
+    <MainMenu />
+    // <Options />
   );
 }
 
