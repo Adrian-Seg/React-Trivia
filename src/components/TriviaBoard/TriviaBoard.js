@@ -1,7 +1,7 @@
 import React from 'react';
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
 import {Questions} from '../questions/questions';
-import {Container, Row} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 
 // Current index is the position in the array of Questions (Question Number)
 let currentIndex = 0;
@@ -20,6 +20,7 @@ class TriviaBoard extends React.Component {
             timer: 30,
 
             showAnswer: false,
+            // if triviaEnd is set to true, this will trigger score screen.
             triviaEnd: false,
         };
     }
@@ -57,47 +58,46 @@ class TriviaBoard extends React.Component {
         this.nextQuestion();
     }
 
-    // on button click increment through questions  array, updating the states that we used before
+    // on button click increment through questions array, updating the states that we used before
 
     render() {
-        const {timer} = this.state;
         return (
             <div>
                 <Container>
-                    <Row className="d-flex justify-content-between">
-                        <col-6>
+                    <Row>
+                        <Col className="d-flex justify-content-center">
                         {/* Adding + 1 because the array starts at 0 */}
                             <h1>Question {currentIndex+1} / 20</h1>
-                        </col-6>
-                        <col-6>
+                        </Col>
+                        <Col className="d-flex justify-content-center">
                             <h1>Score: {this.state.score}</h1>
-                        </col-6>
+                        </Col>
                     </Row>
                 </Container>
                 <Container>
-                    <Row className="d-flex justify-content-center">
-                        <col-4>
-                            <h1>Time Left: {timer}</h1>
-                        </col-4>
+                    <Row>
+                        <Col className="d-flex justify-content-center">
+                            <h1>Time Left: {this.state.timer}</h1>
+                        </Col>
                     </Row>
                 </Container>
                 <Container className="d-flex justify-content-center">
                     <Row>
-                        <col-12>
+                        <Col>
                             <h1> {this.props.triviaArray[currentIndex].question} </h1>
-                        </col-12>
+                        </Col>
                     </Row>
                 </Container>
                 <Container className="d-flex justify-content-center">
                     <Row>
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.props.triviaArray[currentIndex].option1} />
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.props.triviaArray[currentIndex].option2} />
+                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option1} />
+                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option2} />
                     </Row>
                 </Container>
                 <Container className="d-flex justify-content-center">
                     <Row>
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.props.triviaArray[currentIndex].option3} />
-                        <ImportedButton onClick={this.checkAnswer} increment={1} choice={this.props.triviaArray[currentIndex].option4} />
+                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option3} />
+                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option4} />
                     </Row>
                 </Container>
             </div>
