@@ -7,7 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
-import OptionsBtn from '../OptionsBtn/OptionsBtn'
+import Clock from '../Clock/Clock'
 import TriviaBoard from '../TriviaBoard/TriviaBoard';
 import Options from '../Options/Options'
 
@@ -30,38 +30,29 @@ class MainMenu extends React.Component {
     render() {
         return (
             <>
-            <Router>
-                {/* <Container className="d-flex justify-content-center">
-                    <Row>
-                        <Link as={Link} to='/Options'>
-                            <OptionsBtn choice={"Options"} />
-                        </Link>
-                        <Switch>
-                            <Route path="/Options">
-                                <Options />
-                            </Route>
-                        </Switch>
-                    </Row>
-                </Container> */}
+                <Router>
+                    <Container className="d-flex justify-content-center">
+                        <Row>
+                            <Link as={Link} to='/TriviaBoard'>
+                                <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
+                                <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
+                                <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
+                            </Link>
+                        </Row>
+                    </Container>
+                    <hr />
 
+                    <Switch>
+                        <Route path="/TriviaBoard">
+                            <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
+                        </Route>
+                    </Switch>
+                </Router>
                 <Container className="d-flex justify-content-center">
-                    <Row>
-                        <Link as={Link} to='/TriviaBoard'>
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
-                        </Link>
-                    </Row>
+                    <Options />
+                    <Clock />
                 </Container>
-                <hr />
-
-                <Switch>
-                    <Route path="/TriviaBoard">
-                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
-                    </Route>
-                </Switch>
-            </Router>
-                <Options />
+                
             </>
         )
 
