@@ -29,8 +29,9 @@ class MainMenu extends React.Component {
     }
     render() {
         return (
+            <>
             <Router>
-                <Container className="d-flex justify-content-center">
+                {/* <Container className="d-flex justify-content-center">
                     <Row>
                         <Link as={Link} to='/Options'>
                             <OptionsBtn choice={"Options"} />
@@ -41,7 +42,7 @@ class MainMenu extends React.Component {
                             </Route>
                         </Switch>
                     </Row>
-                </Container>
+                </Container> */}
 
                 <Container className="d-flex justify-content-center">
                     <Row>
@@ -60,6 +61,8 @@ class MainMenu extends React.Component {
                     </Route>
                 </Switch>
             </Router>
+                <Options />
+            </>
         )
 
     }

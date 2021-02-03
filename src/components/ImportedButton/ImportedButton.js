@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button'
 
+
 const ImportedButton = (importProps) => {
     const buttonDrip = {
         width: "360px",
@@ -10,7 +11,9 @@ const ImportedButton = (importProps) => {
         fontWeight: "Bold",
         fontSize: "20px"
     }
-    const handleClick = () => {importProps.onClick(importProps.choice)}
+    const handleClick = () => {
+        importProps.onClick(importProps.choice)
+    }
     return (
         <>
             <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button>
