@@ -3,8 +3,9 @@ import {Questions,MediumQuestions, HardQuestions} from '../questions/questions'
 
 const MainMenuBtn = (importProps) => {
     const buttonDrip = {
-        // display: "Flex",
-        // justifyContent: "Column",
+        display: "Flex",
+        justifyContent: "Center",
+        alignItems: "Center",
         width: "160px",
         height: "120px",
         backgroundColor: "Maroon",

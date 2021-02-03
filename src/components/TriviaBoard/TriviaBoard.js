@@ -1,7 +1,8 @@
 import React from 'react';
+import {Container, Row, Col} from 'react-bootstrap'
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
 import {Questions} from '../questions/questions';
-import {Container, Row, Col} from 'react-bootstrap'
+
 
 // Current index is the position in the array of Questions (Question Number)
 let currentIndex = 0;

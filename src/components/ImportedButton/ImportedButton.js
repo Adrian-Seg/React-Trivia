@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button'
 
 const ImportedButton = (importProps) => {
     const buttonDrip = {
-        width: "360px",
-        height: "240px",
+        width: "240px",
+        height: "120px",
         backgroundColor: "Maroon",
         padding: "10px",
         borderColor: "Black",
