@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import {
     BrowserRouter as Router,
     Switch,
@@ -30,7 +30,7 @@ class MainMenu extends React.Component {
     render() {
         return (
             <>
-                <Router>
+                {/* <Router>
                     <Container className="d-flex justify-content-center">
                         <Row>
                             <Link as={Link} to='/TriviaBoard'>
@@ -48,11 +48,70 @@ class MainMenu extends React.Component {
                         </Route>
                     </Switch>
                 </Router>
-                <Container className="d-flex justify-content-center">
-                    <Options />
-                    <Clock />
+                <Container className="d-flex justify-content-end">
+                    <Row>
+                        <Col>
+                            <Options />
+                            <Clock />
+                        </Col>
+                    </Row>
+
+                </Container> */}
+
+
+
+
+                <Container fluid className="">
+                    <Row>
+                        <Router>
+                            <Col>
+                                <Link as={Link} to='/TriviaBoard'>
+                                    <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
+                                    <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
+                                    <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
+                                </Link>
+                            </Col>
+                            <Col>
+                                <Switch>
+                                    <Route path="/TriviaBoard">
+                                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
+                                    </Route>
+                                </Switch>
+                            </Col>
+                        </Router>
+                        <Col className="d-flex justify-content-end">
+                            <Options />
+                        </Col>
+                    </Row>
                 </Container>
-                
+                {/* <Router>
+                    <Container className="d-flex justify-content-center">
+                        <Row>
+                            <Link as={Link} to='/TriviaBoard'>
+                                <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
+                                <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
+                                <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
+                            </Link>
+                        </Row>
+                    </Container>
+                    <hr />
+
+                    <Switch>
+                        <Route path="/TriviaBoard">
+                            <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
+                        </Route>
+                    </Switch>
+                </Router>
+                <Container className="">
+                    <Row>
+                        <Col>
+                            <Options />
+                            <Clock />
+                        </Col>
+                    </Row>
+
+                </Container> */}
+
             </>
         )
 
