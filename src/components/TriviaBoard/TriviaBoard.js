@@ -84,7 +84,7 @@ class TriviaBoard extends React.Component {
                 </Container>
                 <Container>
                     <Row className="d-flex justify-content-center py-5">
-                        <Col xs={8}>
+                        <Col xs={10}>
                             <h1> {this.props.triviaArray[currentIndex].question} </h1>
                         </Col>
                     </Row>

@@ -5,13 +5,12 @@ const ImportedButton = (importProps) => {
     const buttonDrip = {
         width: "300px",
         height: "180px",
+        padding: "10px",
         backgroundColor: "Blue",
         borderStyle: "Solid",
         borderWidth: "Medium",
-        
-        padding: "10px",
         borderColor: "Black",
-        fontWeight: "Bold",
+        fontWeight: "400",
         fontSize: "30px"
     }
     const handleClick = () => {
