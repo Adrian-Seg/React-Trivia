@@ -3,13 +3,16 @@ import Button from 'react-bootstrap/Button'
 
 const ImportedButton = (importProps) => {
     const buttonDrip = {
-        width: "240px",
-        height: "120px",
-        backgroundColor: "Maroon",
+        width: "300px",
+        height: "180px",
+        backgroundColor: "Blue",
+        borderStyle: "Solid",
+        borderWidth: "Medium",
+        
         padding: "10px",
         borderColor: "Black",
         fontWeight: "Bold",
-        fontSize: "20px"
+        fontSize: "30px"
     }
     const handleClick = () => {
         importProps.onClick(importProps.choice)

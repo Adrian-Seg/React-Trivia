@@ -9,7 +9,7 @@ class MusicPlayer extends React.Component {
     render() {
         return (
             <div>
-                <Container className="d-flex justify-content-center my-5">
+                <Container className="d-flex justify-content-center mb-5">
                     <h3>Options</h3>
                 </Container>
                 <Container className="d-flex justify-content-center mb-5">

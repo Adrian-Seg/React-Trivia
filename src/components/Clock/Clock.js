@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container,Row } from 'react-bootstrap';
 
 class Clock extends React.Component {
     constructor(props) {
@@ -22,18 +23,23 @@ class Clock extends React.Component {
         })
     }
 
-    tick(){
+    tick() {
         this.setState({
             date: new Date(),
         })
     }
-    render(){
-        return(
-            <div>
-                {this.state.show ? <h2>It is {this.state.date.toLocaleTimeString()}</h2> : ""}
-                {this.state.show ? <button onClick={this.hideClock} >Hide Clock </button> : <button onClick={this.hideClock} >Show Clock </button>}
-                
-            </div>
+    render() {
+        return (
+            <>
+                <Container>
+                    <Row className="d-flex justify-content-center">
+                    {this.state.show ? <h2>It is {this.state.date.toLocaleTimeString()}</h2> : ""}
+                    </Row>
+                    <Row className="d-flex justify-content-center">
+                    {this.state.show ? <button onClick={this.hideClock} >Hide Clock </button> : <button onClick={this.hideClock} >Show Clock </button>}
+                    </Row>
+                </Container>
+            </>
         )
     }
 }

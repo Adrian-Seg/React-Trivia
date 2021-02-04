@@ -82,23 +82,25 @@ class TriviaBoard extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                <Container className="d-flex justify-content-center">
-                    <Row>
-                        <Col>
+                <Container>
+                    <Row className="d-flex justify-content-center py-5">
+                        <Col xs={8}>
                             <h1> {this.props.triviaArray[currentIndex].question} </h1>
                         </Col>
                     </Row>
                 </Container>
-                <Container className="d-flex justify-content-center">
-                    <Row>
-                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option1} />
-                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option2} />
+                <Container>
+                    <Row className="pb-5">
+                        <Col className="d-flex justify-content-around">
+                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option1} />
+                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option2} />
+                        </Col>
                     </Row>
-                </Container>
-                <Container className="d-flex justify-content-center">
                     <Row>
-                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option3} />
-                        <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option4} />
+                        <Col className="d-flex justify-content-around">
+                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option3} />
+                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option4} />
+                        </Col>
                     </Row>
                 </Container>
             </div>

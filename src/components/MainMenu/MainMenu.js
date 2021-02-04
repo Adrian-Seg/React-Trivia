@@ -61,17 +61,17 @@ class MainMenu extends React.Component {
 
 
 
-                <Container fluid className="">
+                <Container fluid className="pt-5">
                     <Row>
                         <Router>
-                            <Col>
+                            <Col xs={2}>
                                 <Link as={Link} to='/TriviaBoard'>
                                     <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
                                     <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
                                     <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
                                 </Link>
                             </Col>
-                            <Col>
+                            <Col xs={8}>
                                 <Switch>
                                     <Route path="/TriviaBoard">
                                         <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
@@ -79,7 +79,7 @@ class MainMenu extends React.Component {
                                 </Switch>
                             </Col>
                         </Router>
-                        <Col className="d-flex justify-content-end">
+                        <Col xs={2} className="d-flex justify-content-center">
                             <Options />
                         </Col>
                     </Row>
