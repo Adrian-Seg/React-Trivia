@@ -12,7 +12,8 @@ const MainMenuBtn = (importProps) => {
         padding: "10px",
         borderColor: "Black",
         fontWeight: "Bold",
-        fontSize: "20px"
+        fontSize: "20px",
+        marginBottom: "10px"
     }
     const handleClick = () => {
         let randomQuestions;
