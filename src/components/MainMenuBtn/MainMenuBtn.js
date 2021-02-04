@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button'
 import {Questions,MediumQuestions, HardQuestions} from '../questions/questions'
+import ImportedButton from '../ImportedButton/ImportedButton'
 
 const MainMenuBtn = (importProps) => {
     const buttonDrip = {
@@ -15,11 +16,11 @@ const MainMenuBtn = (importProps) => {
         fontSize: "20px",
         marginBottom: "10px"
     }
-    const handleClick = () => {
+    const handleClick = (props) => {
         let randomQuestions;
         let selectedQuestions;
-
-        switch(importProps.choice) {
+        console.log(props)
+        switch(props) {
             case"Easy":
             randomQuestions = Questions.sort(() => Math.random() - 0.5);
             selectedQuestions = randomQuestions.splice(0,20);
@@ -33,11 +34,12 @@ const MainMenuBtn = (importProps) => {
             selectedQuestions = randomQuestions.splice(0,20);
             break;
         }
-        importProps.onClick(importProps.choice, selectedQuestions);
+        console.log(selectedQuestions)
+        importProps.onClick(props, selectedQuestions);
     }
     return (
         <>
-            <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button>
+            <ImportedButton style={buttonDrip} onClick={handleClick} value={importProps.choice}/>
         </>
         
     )

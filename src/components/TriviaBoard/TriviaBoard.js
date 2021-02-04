@@ -108,14 +108,14 @@ class TriviaBoard extends React.Component {
                 <Container>
                     <Row className="pb-5">
                         <Col className="d-flex justify-content-around">
-                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option1} />
-                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option2} />
+                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option1} />
+                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option2} />
                         </Col>
                     </Row>
                     <Row>
                         <Col className="d-flex justify-content-around">
-                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option3} />
-                            <ImportedButton onClick={this.checkAnswer} choice={this.props.triviaArray[currentIndex].option4} />
+                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option3} />
+                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option4} />
                         </Col>
                     </Row>
                 </Container>
@@ -124,6 +124,7 @@ class TriviaBoard extends React.Component {
     }
     // TIMER
     componentDidMount () {
+        this.resetGame();
         this.myInterval = setInterval(() => {
             this.setState(prevState => ({
                 timer: prevState.timer - 1

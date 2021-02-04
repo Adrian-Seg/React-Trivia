@@ -15,7 +15,7 @@ const OptionsBtn = (importProps) => {
     }
     return (
         <>
-            <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button>
+            <ImportedButton style={buttonDrip} onClick={handleClick} value={importProps.choice}   />
         </>
         
     )

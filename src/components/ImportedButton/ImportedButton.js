@@ -14,11 +14,13 @@ const ImportedButton = (importProps) => {
         fontSize: "30px"
     }
     const handleClick = () => {
-        importProps.onClick(importProps.choice)
+        importProps.onClick(importProps.value)
     }
     return (
         <>
-            <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button>
+            {/* {this.importProps.value === undefined ? <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button> : <Button style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button> } */}
+
+            <Button style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button>
         </>
         
     )

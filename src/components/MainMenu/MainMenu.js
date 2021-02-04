@@ -12,6 +12,7 @@ import TriviaBoard from '../TriviaBoard/TriviaBoard';
 import Options from '../Options/Options'
 
 
+
 // function MainMenu() {
 class MainMenu extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class MainMenu extends React.Component {
         })
     }
     setDifficulty = (diff, arr) => {
+        console.log(diff, arr)
         // if (this.state.difficulty !== "") {
 
         // }
@@ -35,6 +37,7 @@ class MainMenu extends React.Component {
             gameArray: arr
         })
     }
+    
 
     render() {
         return (
