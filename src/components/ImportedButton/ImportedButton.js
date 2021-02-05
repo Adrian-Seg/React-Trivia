@@ -11,7 +11,8 @@ const ImportedButton = (importProps) => {
         borderWidth: "Medium",
         borderColor: "Black",
         fontWeight: "400",
-        fontSize: "30px"
+        fontSize: "30px",
+        marginBottom: "25px"
     }
     const handleClick = () => {
         importProps.onClick(importProps.value)
