@@ -19,18 +19,25 @@ class TriviaBoard extends React.Component {
             realAnswer: "",
             score: 0,
             timer: 30,
+            gameTimer: 0,
 
             showAnswer: false,
             // if triviaEnd is set to true, this will trigger score screen.
             triviaEnd: false,
         };
     }
-    endGame() {
-        currentIndex = 0;
-        this.props.gameEnd();
-        alert("End Game");
+
+    checkAnswer = (userSelected) => {
+        // Conditional to check if the users choice is the real answer, to add a point
+        if (userSelected === this.props.triviaArray[currentIndex].answer) {
+            this.setState({
+                score: this.state.score++,
+            })
+        }
+        // Calling next question function
+        this.nextQuestion();
     }
-    
+
     nextQuestion = () => {
         // Move to the next question
         currentIndex++;
@@ -52,16 +59,23 @@ class TriviaBoard extends React.Component {
         
  
     }
-    checkAnswer = (userSelected) => {
-        // Conditional to check if the users choice is the real answer, to add a point
-        if (userSelected === this.props.triviaArray[currentIndex].answer) {
-            this.setState({
-                score: this.state.score++,
+
+    endGame() {
+        
+        this.setState({
+            question: "",
+                option1: "",
+                option2: "",
+                option3: "",
+                option4: "",
+                realAnswer: "",
+                score: this.state.score,
+                timer: "30",
             })
-        }
-        // Calling next question function
-        this.nextQuestion();
+            // score: this.state.score
+        
     }
+    
     resetGame = () => {
         this.setState({
             question: "",
@@ -106,7 +120,7 @@ class TriviaBoard extends React.Component {
                     </Row>
                 </Container>
                 <Container>
-                    <Row className="">
+                    <Row>
                         <Col className="d-flex justify-content-around">
                             <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option1} />
                             <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option2} />
@@ -124,7 +138,7 @@ class TriviaBoard extends React.Component {
     }
     // TIMER
     componentDidMount () {
-        this.resetGame();
+        // this.resetGame();
         this.myInterval = setInterval(() => {
             this.setState(prevState => ({
                 timer: prevState.timer - 1

@@ -7,7 +7,6 @@ import {
     Link
 } from "react-router-dom";
 import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
-import Clock from '../Clock/Clock'
 import TriviaBoard from '../TriviaBoard/TriviaBoard';
 import Options from '../Options/Options'
 
@@ -38,10 +37,16 @@ class MainMenu extends React.Component {
         })
     }
     
-
     render() {
         return (
             <>
+                <Container fluid>
+                    <Row>
+                        <Col className="d-flex justify-content-center py-5">
+                            Trivi..ahaha
+                        </Col>
+                    </Row>
+                </Container>
                 <Container fluid className="pt-5">
                     <Row>
                         <Router>
@@ -72,7 +77,7 @@ class MainMenu extends React.Component {
                                 </Switch>
                             </Col>
                         </Router>
-                        <Col xs={2} className="d-flex justify-content-center align-items-center">
+                        <Col xs={2} className="d-flex justify-content-center">
                             <Options />
                         </Col>
                     </Row>
