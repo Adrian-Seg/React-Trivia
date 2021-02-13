@@ -23,15 +23,15 @@ const MainMenuBtn = (importProps) => {
         switch(props) {
             case"Easy":
             randomQuestions = Questions.sort(() => Math.random() - 0.5);
-            selectedQuestions = randomQuestions.splice(0,21);
+            selectedQuestions = randomQuestions.splice(0,20);
             break;
             case"Medium":
             randomQuestions = MediumQuestions.sort(() => Math.random() - 0.5);
-            selectedQuestions = randomQuestions.splice(0,21);
+            selectedQuestions = randomQuestions.splice(0,20);
             break;
             case"Hard":
             randomQuestions = HardQuestions.sort(() => Math.random() - 0.5);
-            selectedQuestions = randomQuestions.splice(0,21);
+            selectedQuestions = randomQuestions.splice(0,20);
             default:
             break;
         }

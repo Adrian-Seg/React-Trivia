@@ -1,7 +1,7 @@
 import React from 'react';
-import {Container, Row, Col} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
-import {Questions} from '../questions/questions';
+import { Questions } from '../questions/questions';
 
 
 // Current index is the position in the array of Questions (Question Number)
@@ -24,6 +24,8 @@ class TriviaBoard extends React.Component {
             showAnswer: false,
             // if triviaEnd is set to true, this will trigger score screen.
             triviaEnd: false,
+            // Test R
+            playActive: true,
         };
     }
 
@@ -42,10 +44,11 @@ class TriviaBoard extends React.Component {
         // Move to the next question
         currentIndex++;
         // Checking if the questions get to 20, to end game
-        if(currentIndex === 20){
+        if (currentIndex === 20) {
             this.endGame();
+            this.setState({ playActive: false });
         } else {
-            this.setState ({
+            this.setState({
                 question: Questions[currentIndex].question,
                 option1: Questions[currentIndex].option1,
                 option2: Questions[currentIndex].option2,
@@ -56,26 +59,43 @@ class TriviaBoard extends React.Component {
                 timer: 30,
             })
         }
-        
- 
+
+
     }
 
     endGame() {
-        
+
         this.setState({
             question: "",
-                option1: "",
-                option2: "",
-                option3: "",
-                option4: "",
-                realAnswer: "",
-                score: this.state.score,
-                timer: "30",
-            })
-            // score: this.state.score
-        
+            option1: "",
+            option2: "",
+            option3: "",
+            option4: "",
+            realAnswer: "",
+            score: this.state.score,
+            timer: "30",
+        })
+        // score: this.state.score
+
     }
-    
+
+    // Test R
+    finalScore = () => {
+        return (
+            <>
+                <Container>
+                    <Row>
+                        <Col>
+                            <h1>
+                                End of Game friend! Your Score: {this.state.score}
+                            </h1>
+                        </Col>
+                    </Row>
+                </Container>
+            </>
+        );
+    };
+
     resetGame = () => {
         this.setState({
             question: "",
@@ -91,59 +111,64 @@ class TriviaBoard extends React.Component {
 
     // on button click increment through questions array, updating the states that we used before
 
-    render() {
+    playArea = () => {
         return (
-            <div>
-                <Container>
-                    <Row>
-                        <Col className="d-flex justify-content-center">
-                        {/* Adding + 1 because the array starts at 0 */}
-                            <h1>Question {currentIndex+1} / 20</h1>
-                        </Col>
-                        <Col className="d-flex justify-content-center">
-                            <h1>Score: {this.state.score}</h1>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col className="d-flex justify-content-center">
-                            <h1>Time Left: {this.state.timer}</h1>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row className="d-flex justify-content-center py-5">
-                        <Col xs={10} className="d-flex justify-content-center">
-                            <h1> {this.props.triviaArray[currentIndex].question} </h1>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col className="d-flex justify-content-around">
-                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option1} />
-                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option2} />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="d-flex justify-content-around">
-                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option3} />
-                            <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option4} />
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+            <>
+                <div>
+                    <Container>
+                        <Row>
+                            <Col className="d-flex justify-content-center">
+                                {/* Adding + 1 because the array starts at 0 */}
+                                <h1>Question {currentIndex + 1} / 20</h1>
+                            </Col>
+                            <Col className="d-flex justify-content-center">
+                                <h1>Score: {this.state.score}</h1>
+                            </Col>
+                        </Row>
+                    </Container>
+                    <Container>
+                        <Row>
+                            <Col className="d-flex justify-content-center">
+                                <h1>Time Left: {this.state.timer}</h1>
+                            </Col>
+                        </Row>
+                    </Container>
+                    <Container>
+                        <Row className="d-flex justify-content-center py-5">
+                            <Col xs={10} className="d-flex justify-content-center">
+                                <h1> {this.props.triviaArray[currentIndex].question} </h1>
+                            </Col>
+                        </Row>
+                    </Container>
+                    <Container>
+                        <Row>
+                            <Col className="d-flex justify-content-around">
+                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option1} />
+                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option2} />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="d-flex justify-content-around">
+                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option3} />
+                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option4} />
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            </>
         )
     }
+    render() {
+        return this.state.playActive ? <this.playArea /> : <this.finalScore />;
+    }
     // TIMER
-    componentDidMount () {
+    componentDidMount() {
         // this.resetGame();
         this.myInterval = setInterval(() => {
             this.setState(prevState => ({
                 timer: prevState.timer - 1
             }))
-            if (this.state.timer === 0){
+            if (this.state.timer === 0) {
                 this.nextQuestion();
             }
         }, 1000)
