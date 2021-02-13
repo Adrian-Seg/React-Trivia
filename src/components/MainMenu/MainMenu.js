@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,9 +7,9 @@ import {
     Link
 } from "react-router-dom";
 import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
-import OptionsBtn from '../OptionsBtn/OptionsBtn'
 import TriviaBoard from '../TriviaBoard/TriviaBoard';
 import Options from '../Options/Options'
+
 
 
 // function MainMenu() {
@@ -21,45 +21,68 @@ class MainMenu extends React.Component {
             gameArray: []
         }
     }
+    resetBtns = () => {
+        this.setState({
+            difficulty: ""
+        })
+    }
     setDifficulty = (diff, arr) => {
+        console.log(diff, arr)
+        // if (this.state.difficulty !== "") {
+
+        // }
         this.setState({
             difficulty: diff,
             gameArray: arr
         })
     }
+    
     render() {
         return (
-            <Router>
-                <Container>
+            <>
+                <Container fluid>
                     <Row>
-                        <Link as={Link} to='/Options'>
-                            <OptionsBtn choice={"Options"} />
-                        </Link>
-                        <Switch>
-                            <Route path="/Options">
-                                <Options />
-                            </Route>
-                        </Switch>
+                        <Col className="d-flex justify-content-center py-5">
+                            Trivi..ahaha
+                        </Col>
                     </Row>
                 </Container>
-
-                <Container>
+                <Container fluid className="pt-5">
                     <Row>
-                        <Link as={Link} to='/TriviaBoard'>
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
-                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
-                        </Link>
+                        <Router>
+                            <Col xs={2}>
+                                {/* 1 > 0 ? console.log(true) : console.log(else)
+                                1 > 0 && console.log(true) */}
+                                {this.state.difficulty === "" &&
+                                    <>
+                                        <Row className="d-flex justify-content-center align-items-center">
+                                            <p>Set Difficulty</p>
+                                        </Row>
+                                        <Row className="d-flex justify-content-center align-items-center">
+                                            <Link as={Link} to='/TriviaBoard'>
+                                                <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
+                                                <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
+                                                <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
+                                            </Link>
+                                        </Row>
+                                    </>
+                                }
+
+                            </Col>
+                            <Col xs={8}>
+                                <Switch>
+                                    <Route path="/TriviaBoard">
+                                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} gameEnd={this.resetBtns} />
+                                    </Route>
+                                </Switch>
+                            </Col>
+                        </Router>
+                        <Col xs={2} className="d-flex justify-content-center">
+                            <Options />
+                        </Col>
                     </Row>
                 </Container>
-                <hr />
-
-                <Switch>
-                    <Route path="/TriviaBoard">
-                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} />
-                    </Route>
-                </Switch>
-            </Router>
+            </>
         )
 
     }

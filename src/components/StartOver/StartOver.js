@@ -1,30 +1,30 @@
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import MainMenu from '../MainMenu/MainMenu'
 
 
-const ImportedButton = (importProps) => {
+const StartOver = (importProps) => {
     const buttonDrip = {
-        width: "300px",
-        height: "180px",
+        width: "160px",
+        height: "90px",
         padding: "10px",
         backgroundColor: "Blue",
         borderStyle: "Solid",
         borderWidth: "Medium",
         borderColor: "Black",
         fontWeight: "400",
-        fontSize: "30px",
-        marginBottom: "25px"
+        fontSize: "22px",
     }
     const handleClick = () => {
-        importProps.onClick(importProps.value)
+        window.location.reload(false);
     }
     return (
         <>
             {/* {this.importProps.value === undefined ? <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button> : <Button style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button> } */}
 
-            <Button style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button>
+            <Button style={buttonDrip} onClick={handleClick}> Reset Game  </Button>
         </>
         
     )
 }
 
-export default ImportedButton;
+export default StartOver;

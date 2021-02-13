@@ -1,21 +1,26 @@
 import Button from 'react-bootstrap/Button'
 import {Questions,MediumQuestions, HardQuestions} from '../questions/questions'
+import ImportedButton from '../ImportedButton/ImportedButton'
 
 const MainMenuBtn = (importProps) => {
     const buttonDrip = {
-        width: "240px",
-        height: "160px",
-        backgroundColor: "Maroon",
+        display: "Flex",
+        justifyContent: "Center",
+        alignItems: "Center",
+        width: "200px",
+        height: "120px",
+        backgroundColor: "Blue",
         padding: "10px",
         borderColor: "Black",
         fontWeight: "Bold",
-        fontSize: "20px"
+        fontSize: "20px",
+        marginBottom: "10px"
     }
-    const handleClick = () => {
+    const handleClick = (props) => {
         let randomQuestions;
         let selectedQuestions;
-
-        switch(importProps.choice) {
+        console.log(props)
+        switch(props) {
             case"Easy":
             randomQuestions = Questions.sort(() => Math.random() - 0.5);
             selectedQuestions = randomQuestions.splice(0,20);
@@ -24,16 +29,18 @@ const MainMenuBtn = (importProps) => {
             randomQuestions = MediumQuestions.sort(() => Math.random() - 0.5);
             selectedQuestions = randomQuestions.splice(0,20);
             break;
-            default:
+            case"Hard":
             randomQuestions = HardQuestions.sort(() => Math.random() - 0.5);
             selectedQuestions = randomQuestions.splice(0,20);
+            default:
             break;
         }
-        importProps.onClick(importProps.choice, selectedQuestions);
+        console.log(selectedQuestions)
+        importProps.onClick(props, selectedQuestions);
     }
     return (
         <>
-            <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button>
+            <ImportedButton style={buttonDrip} onClick={handleClick} value={importProps.choice}/>
         </>
         
     )
