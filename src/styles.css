@@ -44,7 +44,17 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: aliceblue;
 }
-
+.resetBtn {
+    color: black;
+    background-color: burlywood;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    width: 150px;
+    height: 80px;
+    padding: 8px;
+    font-size: 24px;
+}
 .clock {
     font-size: 24px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -58,7 +68,7 @@ body {
     align-items: center;
     text-align-last: center;
     color: aliceblue;
-    height: 220px;
+    height: 210px;
 }
 .questAreaBord {
     border-style: solid;

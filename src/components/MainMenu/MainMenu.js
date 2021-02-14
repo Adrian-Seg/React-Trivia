@@ -93,7 +93,7 @@ class MainMenu extends React.Component {
                 </Container>
                 <Container fluid>
                     <Row>
-                        <Col className="d-flex justify-content-end pt-3 credits">
+                        <Col className="d-flex justify-content-end pt-4 credits">
                             Created By: Adrian Segura
                         </Col>
                     </Row>

@@ -122,7 +122,7 @@ class TriviaBoard extends React.Component {
                     </Container>
                     <Container>
                         <Row className="questArea optionsBG">
-                            <Col xs={10} className="d-flex justify-content-center optionsBG questAreaBord">
+                            <Col xs={10} className="d-flex justify-content-center optionsBG">
                                 <h1> {this.props.triviaArray[currentIndex].question} </h1>
                             </Col>
                         </Row>
