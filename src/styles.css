@@ -60,6 +60,11 @@ body {
     color: aliceblue;
     height: 220px;
 }
+.questAreaBord {
+    border-style: solid;
+    border-width: thin;
+    border-color: aliceblue;
+}
 .stats {
     color: aliceblue;
 }

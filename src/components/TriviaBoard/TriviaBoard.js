@@ -104,25 +104,25 @@ class TriviaBoard extends React.Component {
                 <div>
                     <Container>
                         <Row>
-                            <Col className="d-flex justify-content-center optionsBG">
+                            <Col className="d-flex justify-content-center optionsBG stats">
                                 {/* Adding + 1 because the array starts at 0 */}
                                 <h1>Question {currentIndex + 1} / 20</h1>
                             </Col>
-                            <Col className="d-flex justify-content-center optionsBG">
+                            <Col className="d-flex justify-content-center optionsBG stats">
                                 <h1>Score: {this.state.score}</h1>
                             </Col>
                         </Row>
                     </Container>
                     <Container>
                         <Row>
-                            <Col className="d-flex justify-content-center optionsBG">
+                            <Col className="d-flex justify-content-center optionsBG stats">
                                 <h1>Time Left: {this.state.timer}</h1>
                             </Col>
                         </Row>
                     </Container>
                     <Container>
                         <Row className="questArea optionsBG">
-                            <Col xs={10} className="d-flex justify-content-center optionsBG">
+                            <Col xs={10} className="d-flex justify-content-center optionsBG questAreaBord">
                                 <h1> {this.props.triviaArray[currentIndex].question} </h1>
                             </Col>
                         </Row>
