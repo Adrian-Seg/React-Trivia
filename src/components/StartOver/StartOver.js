@@ -1,9 +1,15 @@
 import Button from 'react-bootstrap/Button';
 import MainMenu from '../MainMenu/MainMenu'
+import React, { Component } from 'react'
 
-
-const StartOver = (importProps) => {
-    const buttonDrip = {
+class StartOver extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            refresh: props.onClick,
+        }
+    }
+    buttonDrip = {
         width: "160px",
         height: "90px",
         padding: "10px",
@@ -14,17 +20,29 @@ const StartOver = (importProps) => {
         fontWeight: "400",
         fontSize: "22px",
     }
-    const handleClick = () => {
-        window.location.reload(false);
+    render() {
+        return (
+            <div>
+                <Button style={this.buttonDrip} onClick={this.state.refresh}> Reset Game  </Button>
+            </div>
+        )
     }
-    return (
-        <>
-            {/* {this.importProps.value === undefined ? <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button> : <Button style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button> } */}
-
-            <Button style={buttonDrip} onClick={handleClick}> Reset Game  </Button>
-        </>
-        
-    )
 }
+
+
+// const StartOver = (props) => {
+    
+//     // const handleClick = () => {
+//     //     window.location.reload(false);
+//     // }
+//     return (
+//         <>
+//             {/* {this.importProps.value === undefined ? <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button> : <Button style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button> } */}
+
+            
+//         </>
+        
+//     )
+// }
 
 export default StartOver;

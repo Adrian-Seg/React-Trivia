@@ -10,20 +10,19 @@ import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
 import TriviaBoard from '../TriviaBoard/TriviaBoard';
 import Options from '../Options/Options'
 
-
-
 // function MainMenu() {
 class MainMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             difficulty: "",
-            gameArray: []
+            gameArray: [],
         }
     }
     resetBtns = () => {
         this.setState({
-            difficulty: ""
+            difficulty: "",
+            
         })
     }
     setDifficulty = (diff, arr) => {
@@ -36,13 +35,17 @@ class MainMenu extends React.Component {
             gameArray: arr
         })
     }
+
+    handleClick = () => {
+        window.location.reload(false);
+    }
     
     render() {
         return (
             <>
                 <Container fluid>
                     <Row>
-                        <Col className="d-flex justify-content-center py-5">
+                        <Col className="d-flex justify-content-center pt-5 title">
                             Trivi..ahaha
                         </Col>
                     </Row>
@@ -55,30 +58,35 @@ class MainMenu extends React.Component {
                                 1 > 0 && console.log(true) */}
                                 {this.state.difficulty === "" &&
                                     <>
-                                        <Row className="d-flex justify-content-center align-items-center">
+                                        <Row className="d-flex justify-content-center align-items-center optionsBG subtitle">
                                             <p>Set Difficulty</p>
                                         </Row>
-                                        <Row className="d-flex justify-content-center align-items-center">
-                                            <Link as={Link} to='/TriviaBoard'>
+                                        <Row className="d-flex justify-content-center align-items-center optionsBG">
+                                            
                                                 <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
                                                 <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
                                                 <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
-                                            </Link>
+                                            
                                         </Row>
                                     </>
                                 }
 
                             </Col>
                             <Col xs={8}>
-                                <Switch>
-                                    <Route path="/TriviaBoard">
-                                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} gameEnd={this.resetBtns} />
-                                    </Route>
-                                </Switch>
+                                {/* <Switch>
+                                    <Route path="/TriviaBoard"> */}
+                                    {this.state.difficulty !== "" &&
+                                        <>
+                                            <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} gameEnd={this.resetBtns} />
+
+                                        </>
+                                    }
+                                    {/* </Route>
+                                </Switch> */}
                             </Col>
                         </Router>
                         <Col xs={2} className="d-flex justify-content-center">
-                            <Options />
+                            <Options reload={this.handleClick} />
                         </Col>
                     </Row>
                 </Container>

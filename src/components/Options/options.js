@@ -8,25 +8,28 @@ import StartOver from '../StartOver/StartOver'
 
 
 class MusicPlayer extends React.Component {
-    resetGame(props){
-        
+    constructor(props){
+        super(props);
+        this.state = {
+            refresh: props.reload
+        }
     }
     render() {
         return (
             <div>
-                <Container>
+                <Container className="optionsBG">
                     <Row>
-                        <Col className="d-flex justify-content-center">
+                        <Col className="d-flex justify-content-center subtitle">
                             <h3>Options</h3>
                         </Col>
                     </Row>
                     <Row>
                         <Col className="d-flex justify-content-center py-5 my-5">
-                            <StartOver></StartOver>
+                            <StartOver onClick={this.state.refresh}/>
                         </Col>
                     </Row>
                     <Row>
-                        <Col className="d-flex justify-content-center">
+                        <Col className="d-flex justify-content-center mr-n3">
                         <ReactAudioPlayer
                         src={Music}
                         autoPlay

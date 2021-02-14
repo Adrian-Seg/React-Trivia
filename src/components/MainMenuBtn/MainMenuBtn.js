@@ -19,7 +19,7 @@ const MainMenuBtn = (importProps) => {
     const handleClick = (props) => {
         let randomQuestions;
         let selectedQuestions;
-        console.log(props)
+
         switch(props) {
             case"Easy":
             randomQuestions = Questions.sort(() => Math.random() - 0.5);

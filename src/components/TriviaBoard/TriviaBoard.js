@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
 import { Questions } from '../questions/questions';
 
-
 // Current index is the position in the array of Questions (Question Number)
 let currentIndex = 0;
 
@@ -20,12 +19,10 @@ class TriviaBoard extends React.Component {
             score: 0,
             timer: 30,
             gameTimer: 0,
-
-            showAnswer: false,
-            // if triviaEnd is set to true, this will trigger score screen.
-            triviaEnd: false,
             // Test R
             playActive: true,
+
+            showAnswer: false,
         };
     }
 
@@ -79,6 +76,20 @@ class TriviaBoard extends React.Component {
 
     }
 
+    // resetGame = () => {
+    //     this.setState({
+    //         question: "",
+    //         option1: "",
+    //         option2: "",
+    //         option3: "",
+    //         option4: "",
+    //         realAnswer: "",
+    //         score: 0,
+    //         timer: 30,
+    //     })
+    // }
+
+
     // Test R
     finalScore = () => {
         return (
@@ -95,21 +106,6 @@ class TriviaBoard extends React.Component {
             </>
         );
     };
-
-    resetGame = () => {
-        this.setState({
-            question: "",
-            option1: "",
-            option2: "",
-            option3: "",
-            option4: "",
-            realAnswer: "",
-            score: 0,
-            timer: 30,
-        })
-    }
-
-    // on button click increment through questions array, updating the states that we used before
 
     playArea = () => {
         return (
