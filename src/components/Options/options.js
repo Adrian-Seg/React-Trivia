@@ -42,15 +42,7 @@ class MusicPlayer extends React.Component {
                             <Clock />
                         </Col>
                     </Row>
-                    <Row>
-                        <Col className="d-flex justify-content-center">
-                            Created By: Adrian Segura
-                        </Col>
-                    </Row>
                 </Container>
-                
-
-
             </div>
         )
     }

@@ -18,11 +18,9 @@ class TriviaBoard extends React.Component {
             realAnswer: "",
             score: 0,
             timer: 30,
-            gameTimer: 0,
-            // Test R
             playActive: true,
 
-            showAnswer: false,
+            gameTimer: 0,
         };
     }
 
@@ -56,12 +54,9 @@ class TriviaBoard extends React.Component {
                 timer: 30,
             })
         }
-
-
     }
 
     endGame() {
-
         this.setState({
             question: "",
             option1: "",
@@ -72,8 +67,6 @@ class TriviaBoard extends React.Component {
             score: this.state.score,
             timer: "30",
         })
-        // score: this.state.score
-
     }
 
     // resetGame = () => {
@@ -89,8 +82,6 @@ class TriviaBoard extends React.Component {
     //     })
     // }
 
-
-    // Test R
     finalScore = () => {
         return (
             <>
@@ -113,25 +104,25 @@ class TriviaBoard extends React.Component {
                 <div>
                     <Container>
                         <Row>
-                            <Col className="d-flex justify-content-center">
+                            <Col className="d-flex justify-content-center optionsBG">
                                 {/* Adding + 1 because the array starts at 0 */}
                                 <h1>Question {currentIndex + 1} / 20</h1>
                             </Col>
-                            <Col className="d-flex justify-content-center">
+                            <Col className="d-flex justify-content-center optionsBG">
                                 <h1>Score: {this.state.score}</h1>
                             </Col>
                         </Row>
                     </Container>
                     <Container>
                         <Row>
-                            <Col className="d-flex justify-content-center">
+                            <Col className="d-flex justify-content-center optionsBG">
                                 <h1>Time Left: {this.state.timer}</h1>
                             </Col>
                         </Row>
                     </Container>
                     <Container>
-                        <Row className="d-flex justify-content-center py-5">
-                            <Col xs={10} className="d-flex justify-content-center">
+                        <Row className="questArea optionsBG">
+                            <Col xs={10} className="d-flex justify-content-center optionsBG">
                                 <h1> {this.props.triviaArray[currentIndex].question} </h1>
                             </Col>
                         </Row>

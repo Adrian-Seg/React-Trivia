@@ -9,6 +9,7 @@ import {
 import MainMenuBtn from '../MainMenuBtn/MainMenuBtn'
 import TriviaBoard from '../TriviaBoard/TriviaBoard';
 import Options from '../Options/Options'
+import '../../styles.css'
 
 // function MainMenu() {
 class MainMenu extends React.Component {
@@ -50,7 +51,7 @@ class MainMenu extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                <Container fluid className="pt-5">
+                <Container fluid className="">
                     <Row>
                         <Router>
                             <Col xs={2}>
@@ -87,6 +88,13 @@ class MainMenu extends React.Component {
                         </Router>
                         <Col xs={2} className="d-flex justify-content-center">
                             <Options reload={this.handleClick} />
+                        </Col>
+                    </Row>
+                </Container>
+                <Container fluid>
+                    <Row>
+                        <Col className="d-flex justify-content-end pt-3 credits">
+                            Created By: Adrian Segura
                         </Col>
                     </Row>
                 </Container>
