@@ -56,17 +56,24 @@ body {
     font-size: 24px;
     transition: 100ms;
 }
-.resetBtn:hover {
+.resetBtn:hover, .clockBtn:hover {
     transform: scale(1.3);
+    color: aliceblue;
     background-color: #28274F;
     border-style: solid;
-    border-width: medium;
     border: black;
 }
 .clock {
     font-size: 24px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: aliceblue;
+    color: #28274F;
+}
+.clockBtn {
+    color: black;
+    background-color: #E87241;
+    border-style: solid;
+    border-color: black;
+    transition: 100ms;
 }
 
 /* TriviaGame */
