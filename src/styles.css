@@ -1,0 +1,95 @@
+body {
+    background-image: url("./components/MainMenu/desert.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Main Menu */
+.title {
+    font-size: 48px;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: aliceblue;
+}
+
+.credits {
+    font-size: 35px;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+}
+
+.diffBtn {
+    display: flex;
+    color: aliceblue;
+    background-color: chocolate;
+    border-style: solid;
+    border-width: medium;
+    border-color: aliceblue;
+    width: 150px;
+    height: 100px;
+    padding: 8px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+/* Options Component */
+.optionsBG {
+    background-color: rgba(240, 248, 255, 0.082);
+}
+
+.subtitle {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+}
+.resetBtn {
+    color: black;
+    background-color: #E87241;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    width: 150px;
+    height: 80px;
+    padding: 8px;
+    font-size: 24px;
+    transition: 100ms;
+}
+.resetBtn:hover, .clockBtn:hover {
+    transform: scale(1.3);
+    color: aliceblue;
+    background-color: #28274F;
+    border-style: solid;
+    border: black;
+}
+.clock {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #28274F;
+}
+.clockBtn {
+    color: black;
+    background-color: #E87241;
+    border-style: solid;
+    border-color: black;
+    transition: 100ms;
+}
+
+/* TriviaGame */
+.questArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align-last: center;
+    color: aliceblue;
+    height: 210px;
+}
+.questAreaBord {
+    border-style: solid;
+    border-width: thin;
+    border-color: aliceblue;
+}
+.stats {
+    color: aliceblue;
+}

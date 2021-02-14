@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import ImportedButton from '../../components/ImportedButton/ImportedButton';
 import { Questions } from '../questions/questions';
 
-
 // Current index is the position in the array of Questions (Question Number)
 let currentIndex = 0;
 
@@ -19,13 +18,9 @@ class TriviaBoard extends React.Component {
             realAnswer: "",
             score: 0,
             timer: 30,
-            gameTimer: 0,
-
-            showAnswer: false,
-            // if triviaEnd is set to true, this will trigger score screen.
-            triviaEnd: false,
-            // Test R
             playActive: true,
+
+            gameTimer: 0,
         };
     }
 
@@ -59,12 +54,9 @@ class TriviaBoard extends React.Component {
                 timer: 30,
             })
         }
-
-
     }
 
     endGame() {
-
         this.setState({
             question: "",
             option1: "",
@@ -75,11 +67,21 @@ class TriviaBoard extends React.Component {
             score: this.state.score,
             timer: "30",
         })
-        // score: this.state.score
-
     }
 
-    // Test R
+    // resetGame = () => {
+    //     this.setState({
+    //         question: "",
+    //         option1: "",
+    //         option2: "",
+    //         option3: "",
+    //         option4: "",
+    //         realAnswer: "",
+    //         score: 0,
+    //         timer: 30,
+    //     })
+    // }
+
     finalScore = () => {
         return (
             <>
@@ -96,46 +98,31 @@ class TriviaBoard extends React.Component {
         );
     };
 
-    resetGame = () => {
-        this.setState({
-            question: "",
-            option1: "",
-            option2: "",
-            option3: "",
-            option4: "",
-            realAnswer: "",
-            score: 0,
-            timer: 30,
-        })
-    }
-
-    // on button click increment through questions array, updating the states that we used before
-
     playArea = () => {
         return (
             <>
                 <div>
                     <Container>
                         <Row>
-                            <Col className="d-flex justify-content-center">
+                            <Col className="d-flex justify-content-center optionsBG stats">
                                 {/* Adding + 1 because the array starts at 0 */}
                                 <h1>Question {currentIndex + 1} / 20</h1>
                             </Col>
-                            <Col className="d-flex justify-content-center">
+                            <Col className="d-flex justify-content-center optionsBG stats">
                                 <h1>Score: {this.state.score}</h1>
                             </Col>
                         </Row>
                     </Container>
                     <Container>
                         <Row>
-                            <Col className="d-flex justify-content-center">
+                            <Col className="d-flex justify-content-center optionsBG stats">
                                 <h1>Time Left: {this.state.timer}</h1>
                             </Col>
                         </Row>
                     </Container>
                     <Container>
-                        <Row className="d-flex justify-content-center py-5">
-                            <Col xs={10} className="d-flex justify-content-center">
+                        <Row className="questArea optionsBG">
+                            <Col xs={10} className="d-flex justify-content-center optionsBG">
                                 <h1> {this.props.triviaArray[currentIndex].question} </h1>
                             </Col>
                         </Row>
