@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
+
 body {
     background-image: url("./components/MainMenu/desert.jpg");
     background-position: center;
@@ -25,24 +27,35 @@ body {
     width: 100%;
     text-align: center;
 }
-
+.footer {
+    background-color: #28274F;
+    color: aliceblue
+}
+.diffBG {
+    background-color: rgba(240, 248, 255, 0.082);
+    display: flex !important;
+    flex-direction: column !important;
+  
+}
 .diffBtn {
-    display: flex;
-    color: aliceblue;
-    background-color: chocolate;
-    border-style: solid;
-    border-width: medium;
-    border-color: aliceblue;
-    width: 150px;
-    height: 100px;
-    padding: 8px;
-    font-size: 30px;
-    font-weight: 400;
+    display: flex !important;
+    flex-direction: column !important;
+    color: aliceblue !important;
+    background-color: chocolate !important;
+    border-style: solid !important;
+    border-width: medium !important;
+    border-color: aliceblue !important;
+    width: 150px !important;
+    height: 100px !important;
+    padding: 8px !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
 }
 
 /* Options Component */
 .optionsBG {
     background-color: rgba(240, 248, 255, 0.082);
+  
 }
 
 .subtitle {
@@ -93,6 +106,7 @@ body {
     color: aliceblue;
     height: 210px;
 }
+
 .questAreaBord {
     border-style: solid;
     border-width: thin;
@@ -100,5 +114,5 @@ body {
 }
 .stats {
     color: #E87241;
-    font-size: 40px;
+    font-size: 35px;
 }

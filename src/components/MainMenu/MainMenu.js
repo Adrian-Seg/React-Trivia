@@ -23,7 +23,7 @@ class MainMenu extends React.Component {
     resetBtns = () => {
         this.setState({
             difficulty: "",
-            
+
         })
     }
     setDifficulty = (diff, arr) => {
@@ -40,13 +40,13 @@ class MainMenu extends React.Component {
     handleClick = () => {
         window.location.reload(false);
     }
-    
+
     render() {
         return (
             <>
                 <Container fluid>
                     <Row>
-                        <Col className="d-flex justify-content-center pt-5 mt-2 title">
+                        <Col className="d-flex justify-content-center pt-3 title">
                             Trivi..ahaha
                         </Col>
                     </Row>
@@ -62,12 +62,10 @@ class MainMenu extends React.Component {
                                         <Row className="d-flex justify-content-center align-items-center optionsBG subtitle">
                                             <p>Set Difficulty</p>
                                         </Row>
-                                        <Row className="d-flex justify-content-center align-items-center optionsBG">
-                                            
-                                                <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
-                                                <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
-                                                <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
-                                            
+                                        <Row className="d-flex justify-content-center align-items-center diffBG">
+                                            <MainMenuBtn onClick={this.setDifficulty} choice={"Easy"} />
+                                            <MainMenuBtn onClick={this.setDifficulty} choice={"Medium"} />
+                                            <MainMenuBtn onClick={this.setDifficulty} choice={"Hard"} />
                                         </Row>
                                     </>
                                 }
@@ -76,13 +74,13 @@ class MainMenu extends React.Component {
                             <Col xs={8}>
                                 {/* <Switch>
                                     <Route path="/TriviaBoard"> */}
-                                    {this.state.difficulty !== "" &&
-                                        <>
-                                            <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} gameEnd={this.resetBtns} />
+                                {this.state.difficulty !== "" &&
+                                    <>
+                                        <TriviaBoard difficulty={this.state.difficulty} triviaArray={this.state.gameArray} gameEnd={this.resetBtns} />
 
-                                        </>
-                                    }
-                                    {/* </Route>
+                                    </>
+                                }
+                                {/* </Route>
                                 </Switch> */}
                             </Col>
                         </Router>
@@ -93,7 +91,7 @@ class MainMenu extends React.Component {
                 </Container>
                 <Container fluid>
                     <Row>
-                        <Col className="d-flex justify-content-end credits pb-3">
+                        <Col className="d-flex justify-content-center credits footer pb-1">
                             Created By: Adrian Segura
                         </Col>
                     </Row>
