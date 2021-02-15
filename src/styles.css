@@ -17,7 +17,13 @@ body {
     font-size: 35px;
     font-weight: 500;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: fixed;
     color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .diffBtn {
@@ -81,7 +87,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     text-align-last: center;
+    font-size: 40px;
     color: aliceblue;
     height: 210px;
 }
@@ -91,5 +99,6 @@ body {
     border-color: aliceblue;
 }
 .stats {
-    color: aliceblue;
+    color: #E87241;
+    font-size: 40px;
 }
