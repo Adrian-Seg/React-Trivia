@@ -6,13 +6,13 @@ const ImportedButton = (importProps) => {
         width: "300px",
         height: "180px",
         padding: "10px",
-        backgroundColor: "Blue",
+        backgroundColor: "#E87241",
         borderStyle: "Solid",
         borderWidth: "Medium",
         borderColor: "Black",
         fontWeight: "400",
         fontSize: "30px",
-        marginBottom: "25px"
+        marginBottom: "25px",
     }
 
 
@@ -23,7 +23,7 @@ const ImportedButton = (importProps) => {
         <>
             {/* {this.importProps.value === undefined ? <Button style={buttonDrip} onClick={handleClick}> {importProps.choice}  </Button> : <Button style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button> } */}
 
-            <Button  className={importProps.className} style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button>
+            <Button className={importProps.className} style={buttonDrip} onClick={handleClick}> {importProps.value}  </Button>
         </>
         
     )

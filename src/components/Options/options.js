@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import ReactAudioPlayer from 'react-audio-player';
 import Music from '../songs/ItsChronic.mp3';
 import Clock from '../Clock/Clock'
-import ImportedButton from '../ImportedButton/ImportedButton';
 import StartOver from '../StartOver/StartOver'
 
 

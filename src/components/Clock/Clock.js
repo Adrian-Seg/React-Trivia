@@ -33,7 +33,7 @@ class Clock extends React.Component {
             <>
                 <Container>
                     <Row className="d-flex justify-content-center clock">
-                    {this.state.show ? <h2>It is {this.state.date.toLocaleTimeString()}</h2> : ""}
+                    {this.state.show ? <h2>{this.state.date.toLocaleTimeString()}</h2> : ""}
                     </Row>
                     <Row className="d-flex justify-content-center">
                     {this.state.show ? <button className="clockBtn" onClick={this.hideClock} >Hide Clock </button> : <button className="clockBtn" onClick={this.hideClock} >Show Clock </button>}
