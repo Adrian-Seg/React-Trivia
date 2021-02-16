@@ -60,7 +60,6 @@ body {
 /* Options Component */
 .optionsBG {
     background-color: rgba(240, 248, 255, 0.082);
-  
 }
 
 .subtitle {
@@ -88,17 +87,42 @@ body {
     border-style: solid;
     border: black;
 }
+.trivBtns:hover {
+    transform: scale(1.1) !important;
+    color: aliceblue !important;
+    background-color: #28274F !important;
+    border-style: solid;
+    border: black;
+}
+.resetBtn:focus, .clockBtn:focus, .diffBtn:focus, .trivBtns:focus {
+    background-color: #E87241;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    color: black;
+    box-shadow: none !important;
+    transition: 100ms !important;
+    outline: none;
+}
 .clock {
     font-size: 16px;
     font-family: 'Audiowide', cursive;
     color: #28274F;
 }
 .clockBtn {
+    box-shadow: none !important;
+    outline: none;
     color: black;
     background-color: #E87241;
     border-style: solid;
+    border-width: medium;
     border-color: black;
-    transition: 100ms;
+    width: 120px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    transition: 100ms !important;
 }
 
 /* TriviaGame */
@@ -124,12 +148,15 @@ body {
     height:  180px;
     padding: 10px;
     background-color: #E87241;
+    color: black;
     border-style: solid;
     border-width: medium;
     border-color: black;
     font-weight: 400;
     font-size: 30px;
+    font-family: 'Montserrat Alternates', sans-serif;
     margin-bottom: 25px;
+    transition: 100ms;
 }
 
 .finalScore {

@@ -25,7 +25,7 @@ const MainMenuBtn = (importProps) => {
     }
     return (
         <>
-            <ImportedButton className="diffBtn" onClick={handleClick} value={importProps.choice}/>
+            <ImportedButton className="diffBtn my-3" onClick={handleClick} value={importProps.choice}/>
         </>
         
     )

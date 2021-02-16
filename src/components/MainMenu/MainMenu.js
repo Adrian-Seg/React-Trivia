@@ -72,6 +72,7 @@ class MainMenu extends React.Component {
 
                             </Col>
                             <Col xs={8}>
+                                
                                 {/* <Switch>
                                     <Route path="/TriviaBoard"> */}
                                 {this.state.difficulty !== "" &&

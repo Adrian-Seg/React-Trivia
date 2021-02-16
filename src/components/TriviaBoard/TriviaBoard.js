@@ -137,14 +137,14 @@ class TriviaBoard extends React.Component {
                     <Container className="pt-3">
                         <Row>
                             <Col className="d-flex justify-content-around">
-                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option1} />
-                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option2} />
+                                <ImportedButton className="trivBtns" onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option1} />
+                                <ImportedButton className="trivBtns" onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option2} />
                             </Col>
                         </Row>
                         <Row>
                             <Col className="d-flex justify-content-around">
-                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option3} />
-                                <ImportedButton onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option4} />
+                                <ImportedButton className="trivBtns" onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option3} />
+                                <ImportedButton className="trivBtns" onClick={this.checkAnswer} value={this.props.triviaArray[currentIndex].option4} />
                             </Col>
                         </Row>
                     </Container>

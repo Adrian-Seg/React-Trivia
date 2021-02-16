@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container,Row } from 'react-bootstrap';
+import ImportedButton from '../ImportedButton/ImportedButton';
 
 class Clock extends React.Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class Clock extends React.Component {
                     {this.state.show ? <h2>{this.state.date.toLocaleTimeString()}</h2> : ""}
                     </Row>
                     <Row className="d-flex justify-content-center">
-                    {this.state.show ? <button className="clockBtn" onClick={this.hideClock} >Hide Clock </button> : <button className="clockBtn" onClick={this.hideClock} >Show Clock </button>}
+                    {this.state.show ? <ImportedButton className="clockBtn" onClick={this.hideClock} value="Hide Clock :" /> : <ImportedButton className="clockBtn" onClick={this.hideClock} value="Show Clock" />}
                     </Row>
                 </Container>
             </>
