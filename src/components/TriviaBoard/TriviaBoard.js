@@ -85,12 +85,19 @@ class TriviaBoard extends React.Component {
     finalScore = () => {
         return (
             <>
-                <Container>
+                <Container className="optionsBG mt-5">
                     <Row>
-                        <Col>
-                            <h1>
-                                End of Game friend! Your Score: {this.state.score}
-                            </h1>
+                        <Col className="finalScore">
+                            <p>
+                                End of Game friend! 
+                            </p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="finalScore">
+                            <p>
+                                Your Score is: {this.state.score}    
+                             </p>
                         </Col>
                     </Row>
                 </Container>

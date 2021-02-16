@@ -131,3 +131,13 @@ body {
     font-size: 30px;
     margin-bottom: 25px;
 }
+
+.finalScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-family: 'Jockey One', sans-serif;
+    color: aliceblue;
+    height: 150px;
+}
